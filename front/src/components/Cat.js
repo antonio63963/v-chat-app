@@ -5,7 +5,7 @@ const ava = 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.j
 
 function Cat() {
   return (
-    <Avatar src={ava} />
+    <Avatar className='cat_avatar' src={ava} />
   )
 }
 
