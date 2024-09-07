@@ -19,7 +19,7 @@ const nav_buttons = [
   },
 ];
 
-function ActionsSidebar() {
+function NavigationSidebar() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
@@ -51,4 +51,4 @@ function ActionsSidebar() {
   );
 }
 
-export default ActionsSidebar;
+export default NavigationSidebar;
