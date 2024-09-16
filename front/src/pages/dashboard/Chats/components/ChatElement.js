@@ -9,10 +9,11 @@ function getTimeNow() {
   return `${hours}:${minnutes}`;
 }
 
-function ChatElement({ img, userName, lastMsg }) {
+function ChatElement({ img, userName, lastMsg, time, unread }) {
   return (
     <Box
       sx={{
+        cursor: 'pointer',
         borderRadius: 1,
         width: "100%",
         backgroundColor: "#fff",
@@ -22,7 +23,7 @@ function ChatElement({ img, userName, lastMsg }) {
     >
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <Stack direction="row" spacing={2}>
-          <UserAvatar img={null} />
+          <UserAvatar img={img} />
           <Stack direction="column" spacing={0.3}>
             <Typography variant="subtitle2">{userName}</Typography>
             <Typography variant="caption">{lastMsg}</Typography>
@@ -31,9 +32,9 @@ function ChatElement({ img, userName, lastMsg }) {
         {/* tail */}
         <Stack spacing={1.5} alignItems="center" alignSelf="start">
           <Typography sx={{ fontWeight: 600, fontSize: 12 }}>
-            {getTimeNow()}
+            {time}
           </Typography>
-          <Badge color="primary" badgeContent={2}></Badge>
+          <Badge color="primary" badgeContent={unread}></Badge>
         </Stack>
       </Stack>
     </Box>

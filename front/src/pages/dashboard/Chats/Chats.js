@@ -1,25 +1,17 @@
-import React, {useState, useEffect} from "react";
-import {
-  Box,
-  Button,
-  IconButton,
-  Input,
-  Stack,
-  Typography,
-  Divider,
-} from "@mui/material";
-import { faker } from "@faker-js/faker";
+import React, { useState, useEffect } from "react";
+import { Box, Stack } from "@mui/material";
+
+import { useTheme } from "@mui/material/styles";
 
 import HeaderChatsList from "./components/HeaderChatsList.js";
 import SearchInput from "../../../components/SearchInput.js";
-import { useTheme } from "@mui/material/styles";
 import ArchivedButton from "../../../components/ArchivedButton.js";
-import ChatElement from "./components/ChatElement.js";
+import TitledListChat from "./components/TitledListChat.js";
+
+import { ChatList } from "../../../data/index.js";
 
 export default function Chats() {
   const theme = useTheme();
-  const [pinnedChats, setPinnedChats] = useState([])
-  console.log(theme);
 
   return (
     <Box
@@ -37,19 +29,14 @@ export default function Chats() {
         <SearchInput theme={theme} />
         <ArchivedButton onClick={() => {}} />
         <Stack>
-          <Stack>
-            <Typography
-              variant="subtitle2"
-              color={theme.palette.grey[500]}
-              sx={{ py: 2 }}
-            >
-              Pinned
-            </Typography>
-          </Stack>
-          <ChatElement
-            img={faker.image.avatar()}
-            userName={"Mich Jibran"}
-            lastMsg={"Hi there!"}
+          <TitledListChat
+            title="Pinned"
+            chatList={ChatList.filter((c) => c.pinned)}
+          />
+
+          <TitledListChat
+            title="All"
+            chatList={ChatList.filter((c) => !c.pinned)}
           />
         </Stack>
       </Stack>
