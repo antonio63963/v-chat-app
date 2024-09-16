@@ -1,14 +1,26 @@
-import { Box, IconButton, Input, Stack, Typography } from "@mui/material";
-import React from "react";
-import { CircleDashed } from "phosphor-react";
+import React, {useState, useEffect} from "react";
+import {
+  Box,
+  Button,
+  IconButton,
+  Input,
+  Stack,
+  Typography,
+  Divider,
+} from "@mui/material";
+import { faker } from "@faker-js/faker";
 
 import HeaderChatsList from "./components/HeaderChatsList.js";
 import SearchInput from "../../../components/SearchInput.js";
 import { useTheme } from "@mui/material/styles";
+import ArchivedButton from "../../../components/ArchivedButton.js";
+import ChatElement from "./components/ChatElement.js";
 
 export default function Chats() {
   const theme = useTheme();
-  console.log(theme)
+  const [pinnedChats, setPinnedChats] = useState([])
+  console.log(theme);
+
   return (
     <Box
       className="chats"
@@ -21,9 +33,25 @@ export default function Chats() {
       p={3}
     >
       <Stack direction="column">
-        
         <HeaderChatsList />
         <SearchInput theme={theme} />
+        <ArchivedButton onClick={() => {}} />
+        <Stack>
+          <Stack>
+            <Typography
+              variant="subtitle2"
+              color={theme.palette.grey[500]}
+              sx={{ py: 2 }}
+            >
+              Pinned
+            </Typography>
+          </Stack>
+          <ChatElement
+            img={faker.image.avatar()}
+            userName={"Mich Jibran"}
+            lastMsg={"Hi there!"}
+          />
+        </Stack>
       </Stack>
     </Box>
   );
