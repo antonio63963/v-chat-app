@@ -23,7 +23,7 @@ function SearchInput({value, onChange}) {
   console.log("THEME: ", theme);
   return (
     <Search className="SearchInput">
-      <MagnifyingGlass color={theme.palette.grey[500]} />
+      <MagnifyingGlass size={24} color={theme.palette.primary.main} />
       <SeacrchTextField value={value} onChange={onChange} />
     </Search>
   );
