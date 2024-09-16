@@ -33,6 +33,7 @@ export default function ThemeProvider({ children }) {
       typography,
       radius: {
         small: 1.5, //1 is 8px in mui
+        medium: 5,
       },
       breakpoints,
       shape: { borderRadius: 8 },

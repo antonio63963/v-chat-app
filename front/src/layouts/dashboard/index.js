@@ -10,10 +10,10 @@ const DashboardLayout = () => {
   console.log(theme);
 
   return (
-    <>
+    <Stack direction='row'>
       <SidebarApp />
       <Outlet />
-    </>
+    </Stack>
   );
 };
 
