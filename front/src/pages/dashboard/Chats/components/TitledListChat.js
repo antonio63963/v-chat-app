@@ -23,6 +23,7 @@ function TitledListChat({ title, chatList }) {
             userName={c.name}
             img={c.img}
             lastMsg={c.msg}
+            isOnline={c.online}
           />
         );
       })}

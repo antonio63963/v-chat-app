@@ -19,12 +19,14 @@ export default function Chats() {
       sx={{
         width: 320,
         backgroundColor: "#f8faff",
-        minHeight: "100vh",
         boxShadow: "0 0 2px rgba(0, 0, 0, .25)",
       }}
-      p={3}
     >
-      <Stack direction="column">
+      <Stack
+        direction="column"
+        p={3}
+        sx={{ height: "100vh", overflowY: "scroll" }}
+      >
         <HeaderChatsList />
         <SearchInput theme={theme} />
         <ArchivedButton onClick={() => {}} />

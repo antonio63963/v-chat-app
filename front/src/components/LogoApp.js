@@ -8,12 +8,16 @@ const LogoApp = ({logo}) => {
     <Box
       sx={{
         bgcolor: theme.palette.primary.main,
-        width: 64,
-        height: 64,
+        width: 48,
+        height: 48,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         borderRadius: theme.radius.small,
+        padding: 1
       }}
     >
-      <img src={logo} alt="Logo" />
+      <img src='/logo.svg' alt="Logo" style={{maxWidth: '24px'}} />
     </Box>
   );
 };

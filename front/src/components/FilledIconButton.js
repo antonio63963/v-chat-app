@@ -11,7 +11,7 @@ function FilledIconButton({ icon, onClick }) {
       p={1}
       sx={{ backgroundColor: theme.palette.primary.main, borderRadius: 1.5 }}
     >
-      <IconButton sx={{ width: 48, height: 48, color: theme.palette.grey[0] }}>
+      <IconButton sx={{ width: 32, height: 32, color: theme.palette.grey[0] }}>
         {icon}
       </IconButton>
     </Box>

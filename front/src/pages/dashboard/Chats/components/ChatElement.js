@@ -9,7 +9,7 @@ function getTimeNow() {
   return `${hours}:${minnutes}`;
 }
 
-function ChatElement({ img, userName, lastMsg, time, unread }) {
+function ChatElement({ img, userName, lastMsg, time, unread, isOnline }) {
   return (
     <Box
       sx={{
@@ -23,7 +23,7 @@ function ChatElement({ img, userName, lastMsg, time, unread }) {
     >
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <Stack direction="row" spacing={2}>
-          <UserAvatar img={img} />
+          <UserAvatar img={img} isOnline={isOnline}/>
           <Stack direction="column" spacing={0.3}>
             <Typography variant="subtitle2">{userName}</Typography>
             <Typography variant="caption">{lastMsg}</Typography>

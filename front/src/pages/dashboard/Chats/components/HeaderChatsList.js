@@ -4,7 +4,7 @@ import { CircleDashed } from "phosphor-react";
 
 function HeaderChatsList() {
   return (
-    <Stack direction="row" alignItems="center" justifyContent="space-between">
+    <Stack direction="row" alignItems="center" justifyContent="space-between" mb={2}>
       <Typography variant="h5">Chats</Typography>
       <IconButton>
         <CircleDashed />

@@ -31,12 +31,12 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-function UserAvatar({img}) {
+function UserAvatar({ img, isOnline }) {
   return (
     <StyledBadge
       overlap="circular"
       anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-      variant="dot"
+      variant={isOnline ? "dot" : "standard"}
     >
       <Avatar src={img} />
     </StyledBadge>

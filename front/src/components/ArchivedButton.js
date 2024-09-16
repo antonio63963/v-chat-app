@@ -4,12 +4,12 @@ import { ArchiveBox } from "phosphor-react";
 
 function ArchivedButton({ onClick }) {
   return (
-    <Stack spacing={1} sx={{ mt: 2 }}>
+    <Stack spacing={1} sx={{ pt: 2 }}>
       <Stack direction="row" alignItems="center" spacing={1.5}>
         <ArchiveBox size={24} />
         <Button onClick={onClick}>Archived</Button>
       </Stack>
-      <Divider sx={{ height: 1, width: "100%" }} />
+      <Divider sx={{  width: "100%" }} />
     </Stack>
   );
 }
