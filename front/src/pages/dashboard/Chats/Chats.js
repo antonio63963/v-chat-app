@@ -28,7 +28,7 @@ export default function Chats() {
       <Stack
         direction="column"
         p={3}
-        sx={{ flexGrow: 1, height: "100vh", overflowY: "scroll" }}
+        sx={{ flexGrow: 1, height: "100vh", overflowY: "scroll"}}
       >
         <HeaderChatsList />
         <SearchInput theme={theme} />

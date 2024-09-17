@@ -10,6 +10,14 @@ function getTimeNow() {
   return `${hours}:${minnutes}`;
 }
 
+const styles = {
+  overflowEllipsis: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+  },
+};
+
 function ChatElement({ img, userName, lastMsg, time, unread, isOnline }) {
   const theme = useTheme();
   return (
@@ -29,9 +37,18 @@ function ChatElement({ img, userName, lastMsg, time, unread, isOnline }) {
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <Stack direction="row" spacing={2}>
           <UserAvatar img={img} isOnline={isOnline} />
-          <Stack direction="column" spacing={0.3}>
-            <Typography variant="subtitle2">{userName}</Typography>
-            <Typography variant="caption" sx={{textOverflow: 'ellipsis', whiteSpace: 'nowrap', flexShrink: 1}}>{lastMsg}</Typography>
+          <Stack
+            className="chat-element-text"
+            direction="column"
+            spacing={0.3}
+            sx={{ width: 140 }}
+          >
+            <Typography variant="subtitle2" sx={styles.overflowEllipsis}>
+              {userName}
+            </Typography>
+            <Typography variant="caption" sx={styles.overflowEllipsis}>
+              {lastMsg}
+            </Typography>
           </Stack>
         </Stack>
         {/* tail */}
