@@ -3,7 +3,7 @@ import { MagnifyingGlass } from "phosphor-react";
 
 const Search = styled("div")(({ theme }) => ({
   borderRadius: 32,
-  backgroundColor: alpha(theme.palette.background.paper, 1),
+  backgroundColor: alpha(theme.palette.background.default, 1),
   width: "100%",
   display: "flex",
   alignItems: "center",
@@ -16,9 +16,14 @@ const SeacrchTextField = styled("input")(({ theme }) => ({
   fontSize: 14,
   flexGrow: 1,
   padding: "8px 12px",
+  background: "none",
+  color:
+    theme.palette.mode === "light"
+      ? theme.palette.background.primiry
+      : theme.palette.grey[0],
 }));
 
-function SearchInput({value, onChange}) {
+function SearchInput({ value, onChange }) {
   const theme = useTheme();
   console.log("THEME: ", theme);
   return (

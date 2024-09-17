@@ -24,6 +24,8 @@ function TitledListChat({ title, chatList }) {
             img={c.img}
             lastMsg={c.msg}
             isOnline={c.online}
+            time={c.time}
+            unread={c.unread}
           />
         );
       })}

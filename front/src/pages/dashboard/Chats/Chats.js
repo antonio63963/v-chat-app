@@ -18,14 +18,17 @@ export default function Chats() {
       className="chats"
       sx={{
         width: 320,
-        backgroundColor: "#f8faff",
+        backgroundColor:
+          theme.palette.mode === "light"
+            ? "#f8faff"
+            : theme.palette.background.paper,
         boxShadow: "0 0 2px rgba(0, 0, 0, .25)",
       }}
     >
       <Stack
         direction="column"
         p={3}
-        sx={{ height: "100vh", overflowY: "scroll" }}
+        sx={{ flexGrow: 1, height: "100vh", overflowY: "scroll" }}
       >
         <HeaderChatsList />
         <SearchInput theme={theme} />
