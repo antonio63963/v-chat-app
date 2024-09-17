@@ -9,10 +9,11 @@ import ArchivedButton from "../../../components/ArchivedButton.js";
 import TitledListChat from "./components/TitledListChat.js";
 
 import { ChatList } from "../../../data/index.js";
+import StyledScroll from "../../../components/StyledScroll.js";
 
 export default function Chats() {
   const theme = useTheme();
-
+console.log(theme.palette.mode)
   return (
     <Box
       className="chats"
@@ -25,26 +26,24 @@ export default function Chats() {
         boxShadow: "0 0 2px rgba(0, 0, 0, .25)",
       }}
     >
-      <Stack
-        direction="column"
-        p={3}
-        sx={{ flexGrow: 1, height: "100vh", overflowY: "scroll"}}
-      >
-        <HeaderChatsList />
-        <SearchInput theme={theme} />
-        <ArchivedButton onClick={() => {}} />
-        <Stack>
-          <TitledListChat
-            title="Pinned"
-            chatList={ChatList.filter((c) => c.pinned)}
-          />
+      <StyledScroll>
+        <Stack direction="column" p={3} sx={{ flexGrow: 1, height: "100vh" }}>
+          <HeaderChatsList />
+          <SearchInput theme={theme} />
+          <ArchivedButton onClick={() => {}} />
+          <Stack>
+            <TitledListChat
+              title="Pinned"
+              chatList={ChatList.filter((c) => c.pinned)}
+            />
 
-          <TitledListChat
-            title="All"
-            chatList={ChatList.filter((c) => !c.pinned)}
-          />
+            <TitledListChat
+              title="All"
+              chatList={ChatList.filter((c) => !c.pinned)}
+            />
+          </Stack>
         </Stack>
-      </Stack>
+      </StyledScroll>
     </Box>
   );
 }
