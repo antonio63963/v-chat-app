@@ -69,8 +69,8 @@ const SidebarApp = () => {
       sx={{
         boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
         width: 100,
-        minHeight: "100vh",
-        height: "max-content",
+        // minHeight: "100vh",
+        height: "100%",
         backgroundColor: theme.palette.background.paper,
       }}
     >
@@ -78,7 +78,7 @@ const SidebarApp = () => {
         spacing={3}
         direction="column"
         alignItems="center"
-        sx={{ width: "100%", height: "max-content", minHeight: "100vh" }}
+        sx={{ width: "100%", height: "100%" }}
       >
         <LogoApp logo={logo} />
         <NavigationSidebar />

@@ -17,12 +17,13 @@ import cssStyles from "../../../utils/cssStyles";
 import { NAVBAR, defaultSettings } from "../../../config";
 //
 import Iconify from "../../Iconify";
-import Scrollbar from "../../Scrollbar";
+
 //
 import ToggleButton from "./ToggleButton";
 import SettingDirection from "./SettingDirection";
 import SettingFullscreen from "./SettingFullscreen";
 import SettingColorPresets from "./SettingColorPresets";
+import { CustomScrollbar } from "../../StyledScroll";
 
 // ----------------------------------------------------------------------
 
@@ -134,7 +135,7 @@ export default function SettingsDrawer() {
 
               <Divider sx={{ borderStyle: "dashed" }} />
 
-              <Scrollbar sx={{ flexGrow: 1 }}>
+              <CustomScrollbar timer={1000} sx={{ flexGrow: 1 }}>
                 <Stack spacing={3} sx={{ p: 3 }}>
                   <Stack spacing={1.5}>
                     <Typography variant="subtitle2">Direction</Typography>
@@ -148,7 +149,7 @@ export default function SettingsDrawer() {
 
                   <SettingFullscreen />
                 </Stack>
-              </Scrollbar>
+              </CustomScrollbar>
             </RootStyle>
           </>
         )}

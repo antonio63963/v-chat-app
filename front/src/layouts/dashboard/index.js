@@ -10,7 +10,7 @@ const DashboardLayout = () => {
   console.log(theme);
 
   return (
-    <Stack direction='row'>
+    <Stack className="app" direction='row' sx={{height: '100%', minHeight: '100vh'}}>
       <SidebarApp />
       <Outlet />
     </Stack>
