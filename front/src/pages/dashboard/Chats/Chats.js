@@ -9,11 +9,11 @@ import ArchivedButton from "../../../components/ArchivedButton.js";
 import TitledListChat from "./components/TitledListChat.js";
 
 import { ChatList } from "../../../data/index.js";
-import StyledScroll from "../../../components/StyledScroll.js";
+import StyledScroll, {CustomScrollbar} from "../../../components/StyledScroll.js";
 
 export default function Chats() {
   const theme = useTheme();
-console.log(theme.palette.mode)
+
   return (
     <Box
       className="chats"
@@ -26,7 +26,7 @@ console.log(theme.palette.mode)
         boxShadow: "0 0 2px rgba(0, 0, 0, .25)",
       }}
     >
-      <StyledScroll>
+      <CustomScrollbar className="chats-scroll" timer={1000} >
         <Stack direction="column" p={3} sx={{ flexGrow: 1, height: "100vh" }}>
           <HeaderChatsList />
           <SearchInput theme={theme} />
@@ -43,7 +43,7 @@ console.log(theme.palette.mode)
             />
           </Stack>
         </Stack>
-      </StyledScroll>
+      </CustomScrollbar>
     </Box>
   );
 }
